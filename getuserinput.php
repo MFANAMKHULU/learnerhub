@@ -3,7 +3,7 @@
 <body>
     
 #<!-- Declaring variables -->
-
+<!--14:00-->
 name <input type="text" name="name"><br>
 lastname <input type="text" name="name"><br>
 id <input type="text" name="name"><br>
@@ -15,6 +15,7 @@ Email: <input type="text" name="email"><br>
 <input type="radio" name="male" value="0">Female
 <input type="radio" name="female" value="1">Male <br>
 
+ <!--15:00-->
  <!--function determineGenderFromID($id) {
     // Extract the relevant digits from the ID number
     $genderDigits = substr($idNumber, -2, 1);
