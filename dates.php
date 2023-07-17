@@ -24,7 +24,16 @@ echo date_format($date,"Y-m-d") . "<br>";
 $date1=date_create("2023-07-17");
 $date2=date_create("1999-06-11");
 $diff=date_diff($date1,$date2);
-echo  
+echo "The difference between the dates " ."<br>";
+
+# set time
+date_time_set($date,11,24);
+echo date_format($date,"Y-m-d H:i:s") ."<br>";
+
+# time difference
+$lastWeek = new DateTime('last thursday');
+$now = new DateTime();
+#var_dump($now->diff($lastWeek, true));
 
 $conn->close(); 
 ?>
