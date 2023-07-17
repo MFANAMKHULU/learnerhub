@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+/*$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "katdb";
@@ -19,7 +19,7 @@ VALUES ('2002','Teddy', 'Charmaine', '0637993375')";
 $sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
 VALUES ('3003','Bongi', 'Shabalala', '0825947973')";
 
-$sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
+/*$sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
 VALUES ('4004','Banele', 'Nyoni', '0815475685')";
 
 $sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
@@ -29,7 +29,7 @@ $sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
 VALUES ('6006','Angela', 'Yolanda', '0787756624')";
 
 $sql = "INSERT INTO TechCodeInterns (learnerid,internName, Surname, empNum)
-VALUES ('7007','Melusi', 'Shaku', '0635208844')";
+VALUES ('7007','Melusi', 'Shaku', '0635208844')";*/
 
 if ($conn->multi_query($sql) === TRUE) {
     echo " new Data successfully inserted";
@@ -38,5 +38,5 @@ if ($conn->multi_query($sql) === TRUE) {
   }
 
 
-$conn->close(); 
+$conn->close();*/ 
 ?>

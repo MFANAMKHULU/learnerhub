@@ -1,5 +1,5 @@
 <?php
-/*$servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "katdb";
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM TechCodeInternLearners LIMIT 3";
+$sql = "SELECT * FROM TechCodeInterns LIMIT 2";
 
 if ($conn->query($sql) === TRUE) {
   echo " Data could be limited ";
@@ -20,5 +20,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-$conn->close();*/
+$conn->close();
 ?>
