@@ -28,8 +28,36 @@ if ($t < "12") {
 } else {
   echo "It's not yet your lunch"."<br>";
 }
+# while loop
+$x = 2;
+
+/*while($x <= 10) {
+  echo "The number is: $x <br>";
+  $x++;
+}
+"<br>";
+# do_while
+$x = 2;*/
+
+/*do {
+  echo "The number is: $x <br>";
+  $x++;
+} while ($x <= 8);*/
 
 
+# forloop
+/*for ($x = 6; $x <= 10; $x++) {
+    echo "The number is: $x <br>";
+  }
+*/
+
+# break statements
+for ($x = 1; $x < 10; $x++) {
+    if ($x == 7) {
+      break;
+    }
+    echo "The number is: $x <br>";
+  }
 
 $conn->close(); 
 ?>
