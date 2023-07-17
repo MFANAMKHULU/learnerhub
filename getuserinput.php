@@ -1,6 +1,7 @@
 
 <html>
 <body>
+    <?php
 <!-- Declaring variables -->
 
 name: <input type="text" name="name"><br>
@@ -11,16 +12,16 @@ cellno <input type="text" name="name"><br>
 Email: <input type="text" name="email"><br>
 
 <!-- radio group -->
-<input type="radio" name="gender" value="female">Female
-<input type="radio" name="gender" value="male">Male
+<input type="radio" name="male" value="0">Female
+<input type="radio" name="female" value="1">Male
 
-$name = $lastname = $id = $studentnum = $cellno = $Email = "";
+#<!--$name = $lastname = $id = $studentnum = $cellno = $Email = "";-->
 
 
 
 <!-- <input type="Confirm "> -->
 
 </form>
-
+>?
 </body>
 </html>
