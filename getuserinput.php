@@ -29,6 +29,10 @@ Email: <input type="text" name="email"><br>
 }-->
 #<!--$name = $lastname = $id = $studentnum = $cellno = $Email = "";-->
 
+<!-- 18 JULY -->
+<!--10:00-->
+
+<img src="C:\Users\katle\Desktop\7.jpg" alt="My favorite pic" width="120" height="200">
 
 
  <input type= Submit > 
