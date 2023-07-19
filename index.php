@@ -82,7 +82,8 @@ final class Index{
     if (!array_key_exists($name, self::$CLASS)) {
         die('Class "' . $name . '" not found.');
     }
-    require_once _DIR_.self::$CLASS[$name];
+    require_once _DIR_.self::$CLASS[$name]; #tell php you need a file within a file
+                                            # removes the need to create a connection everytime
   }
 
   /**
