@@ -40,7 +40,7 @@ class NotFoundException extends Exception {
  */
 final class Index{
 
-  const LAYOUT_DIR = '/layout/';   #phtml
+  const LAYOUT_DIR = '/layout/';
   const PAGE_DIR = '/web/';
   const LAYOUT_PAGE='index.phtml';
   const DEFAULT_PAGE = 'home';
@@ -82,8 +82,7 @@ final class Index{
     if (!array_key_exists($name, self::$CLASS)) {
         die('Class "' . $name . '" not found.');
     }
-    require_once _DIR_.self::$CLASS[$name]; #tell php you need a file within a file
-                                            # removes the need to create a connection everytime
+    require_once __DIR__.self::$CLASS[$name];
   }
 
   /**
@@ -117,7 +116,7 @@ final class Index{
         $template = $this->getTemplate($page);
          
         // main template (layout)
-        require _DIR_.self::LAYOUT_DIR.self::LAYOUT_PAGE;
+        require __DIR__.self::LAYOUT_DIR.self::LAYOUT_PAGE;
       }
       if (!$run) {
         throw new NotFoundException('Page "' . $page . '" has neither script nor template!');
@@ -162,7 +161,7 @@ final class Index{
    * 
    */
   private function getScript($page) {
-    return _DIR_.self::PAGE_DIR.$page.'.php';
+    return __DIR__.self::PAGE_DIR.$page.'.php';
   }
 
   /**
@@ -176,7 +175,7 @@ final class Index{
    * 
    */
   private function getTemplate($page) {
-      return _DIR_.self::PAGE_DIR.$page.'.phtml';
+      return __DIR__.self::PAGE_DIR.$page.'.phtml';
   }
 
   /**
