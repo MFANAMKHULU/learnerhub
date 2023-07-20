@@ -47,14 +47,9 @@ final class Index{
   const DEFAULT_PAGE = 'home';
   
   private static $CLASS = [
-    'Db' => '/model/model.php', 
-    'UserDao' => '/model/model.php',
-    'ProductDao' => '/model/model.php',
-    'User' => '/view/view.php',
-    'Product' => '/view/view.php',
-    'NotFoundException' => 'index.php',
-    'Helper'=>'/view/view.php',
-    'Cart'=>'/view/view.php'
+    'userinfo' => '/model/model.php', 
+    'NotFoundException' => 'index.php'
+    
   ];
 
     /**
@@ -80,8 +75,8 @@ final class Index{
      * Class loader.
      */
   public function loadClass($name){
-    if (!array_key_exists($name, self::$CLASS)) {
-        die('Class "' . $name . '" not found.');
+    if (!array_key_exists($name, self::$CLASS)) { // tell which class, where should find data
+        die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
     }
     require_once __DIR__.self::$CLASS[$name];
   }
@@ -123,6 +118,9 @@ final class Index{
         throw new NotFoundException('Page "' . $page . '" has neither script nor template!');
       }
   }
+  // difference betwwen 
+  // 404 resource not found
+  // 500 
 
   /**
    * 
