@@ -10,7 +10,8 @@
  */
 
 /*
-    require "user.php";
+    require "user.php"; #tell compiler to open fill  template set script
+
 
     $user = new user();
 
@@ -32,7 +33,7 @@
 /**
  * Exception which causes HTTP ERROR 404 (Not Found).
  */
-class NotFoundException extends Exception {
+class NotFoundException extends Exception { // first class to load and last to load
 }
 
 /**
