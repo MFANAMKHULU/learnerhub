@@ -50,7 +50,7 @@ public function register( array $MyClass)
         $this->ID = $MyClass['ID'];
     }
     else{
-        $errors[] = new ValidatorError('ID','surname cannot be empty');
+        $errors[] = new ValidatorError('ID','ID cannot be empty');
     }
 
     if(trim($MyClass['CellNumber'])){
