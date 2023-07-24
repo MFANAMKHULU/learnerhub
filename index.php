@@ -44,10 +44,10 @@ final class Index{
   const LAYOUT_DIR = '/layout/';
   const PAGE_DIR = '/web/';
   const LAYOUT_PAGE='index.phtml';
-  const DEFAULT_PAGE = 'home';
+  const DEFAULT_PAGE = 'form';
   
   private static $CLASS = [
-    //'MyClass' => '/model/model.php', 
+    'MyClass' => '/model/model.php', 
     'NotFoundException' => 'index.php',
     'Helper' =>'/model/model.php'
     
@@ -78,7 +78,7 @@ final class Index{
   public function loadClass($name){
     if (!array_key_exists($name, self::$CLASS)) { // tell which class, where should find data
         die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
-      // throw new exception("Class doesn't exist".$name);
+      //throw new exception("Class doesn't exist".$name);
     }
     require_once __DIR__.self::$CLASS[$name];
   }
