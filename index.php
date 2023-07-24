@@ -77,8 +77,8 @@ final class Index{
      */
   public function loadClass($name){
     if (!array_key_exists($name, self::$CLASS)) { // tell which class, where should find data
-       // die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
-       throw new exception("Class doesn't exist".$name);
+        die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
+      // throw new exception("Class doesn't exist".$name);
     }
     require_once __DIR__.self::$CLASS[$name];
   }
