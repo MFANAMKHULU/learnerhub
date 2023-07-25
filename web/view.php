@@ -6,6 +6,8 @@
 <body>
     <h2> Result</h2>
     <?php
+
+     require_once 'model/model.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -20,6 +22,7 @@
     } else {
         echo "<p>No data submitted.</p>";
     }
+
     ?>
 </body>
 </html>
