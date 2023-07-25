@@ -1,12 +1,13 @@
 <?php
 
 final class MyClass{
+ // variables   
 private $name;
 private $email;
 private $ID;
 private $CellNumber;
 
-//function __construct(){}
+function __construct(){}
 // Accept input from editboxes and set the variables
 public function setParam(stdClass $MyClass){
 
@@ -91,62 +92,5 @@ final class Helper{
         return htmlspecialchars($string, ENT_QUOTES);
     }
 };
-
-/*final class User{
-
-    private $name;
-    private $email;
-    private $ID;
-    private $CellNumber;
-    
-
-    function __construct(){
-
-    }
-
-    public function setParam(stdClass $user){
-
-
-        if(array_key_exists('name', $user)){
-            $this->name = $user->name;
-        }
-
-        if(array_key_exists('email', $user)){
-            $this->email = $user->email;
-        }
-
-        if(array_key_exists('ID', $user)){
-            $this->ID = $user->ID;
-        }
-
-        if(array_key_exists('CellNumber', $user)){
-            $this->CellNumber = $user->CellNumber;
-        }
-    }
-
-
-};*/
-
-
-
-/*final class ValidatorError {
-
-    private $source;
-    private $message;
-
-  
-    function __construct($source, $message) {
-        $this->source = $source;
-        $this->message = $message;
-    }
-
-    public function getSource() {
-        return $this->source;
-    }
-
-    public function getMessage() {
-        return $this->message;
-    }
-};*/
 
 ?>
