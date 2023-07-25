@@ -7,8 +7,7 @@ private $email;
 private $ID;
 private $CellNumber;
 
-function __construct(){}
-// Accept input from editboxes and set the variables
+// populate into array
 public function setParam(stdClass $MyClass){
 
     if(array_key_exists('name', $MyClass)){

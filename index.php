@@ -17,9 +17,7 @@
 class NotFoundException extends Exception { // first class to load and last to load
 }
 
-/**
- * Application controller & main access point
- */
+// where we load the page from when we run
 final class Index{
 
   const LAYOUT_DIR = '/layout/';
@@ -27,16 +25,15 @@ final class Index{
   const LAYOUT_PAGE='index.phtml';
   const DEFAULT_PAGE = 'form';
   
+  // where we declare our classes along with their location
   private static $CLASS = [
-    'MyClass' => '/model/model.php', 
+    'MyClass' => '/model/model.php', // name of class  and it's location
     'NotFoundException' => 'index.php',
     'Helper' =>'/model/model.php'
     
   ];
 
-    /**
-     * System config.
-     */
+  
     function __construct(){
       // error reporting - all errors for development (ensure you have display_errors = On in your php.ini file)
       error_reporting(E_ALL | E_STRICT);
@@ -51,20 +48,16 @@ final class Index{
       }
   }
 
-  /**
-     * Class loader.
-     */
+  
   public function loadClass($name){
     if (!array_key_exists($name, self::$CLASS)) { // tell which class, where should find data
         die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
-      //throw new exception("Class doesn't exist".$name);
+      throw new exception("Class doesn't exist".$name);// if class doesn't exist die
     }
     require_once __DIR__.self::$CLASS[$name];
   }
 
-  /**
-    * Exception handler.
-    */
+  
   public function handleException($ex) {
     $extra = ['message' => $ex->getMessage()];
     if ($ex instanceof NotFoundException) {
@@ -77,9 +70,7 @@ final class Index{
     }
   }
 
-  /**
-   * 
-   */
+  
   private function runPage($page, array $extra = []) {
       
       $run = false;
@@ -89,17 +80,17 @@ final class Index{
       }
       if ($this->hasTemplate($page)) {
         $run = true;
-        // data for main template
+        
         $template = $this->getTemplate($page);
          
-        // main template (layout)
+      
         require __DIR__.self::LAYOUT_DIR.self::LAYOUT_PAGE;
       }
       if (!$run) {
         throw new NotFoundException('Page "' . $page . '" has neither script nor template!');
       }
   }
-  // difference betwwen 
+  // difference between 404 and 500 
   // 404 resource not found
   // 500 
 
@@ -119,48 +110,38 @@ final class Index{
    */
   private function checkPage($page) {
       if (!preg_match('/^[a-z0-9-]+$/i', $page)) {
-        // TODO log attempt, redirect attacker, ...
+      
         throw new NotFoundException('Unsafe page "' . $page . '" requested');
       }
       if (!$this->hasScript($page)
           && !$this->hasTemplate($page)) {
-        // TODO log attempt, redirect attacker, ...
+      
         throw new NotFoundException('Page "' . $page . '" not found');
       }
       return $page;
   }
 
-  /**
-   * 
-   */
+  
   private function hasScript($page) {
     return file_exists($this->getScript($page));
   }
 
-  /**
-   * 
-   */
+  
   private function getScript($page) {
     return __DIR__.self::PAGE_DIR.$page.'.php';
   }
 
-  /**
-   * 
-   */
+  
   private function hasTemplate($page) {
       return file_exists($this->getTemplate($page));
   } 
   
-  /**
-   * 
-   */
+
   private function getTemplate($page) {
       return __DIR__.self::PAGE_DIR.$page.'.phtml';
   }
 
-  /**
-    * Run the application!
-    */
+  
   public function run() {
       $this->runPage($this->getPage());
   }
