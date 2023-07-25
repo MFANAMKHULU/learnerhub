@@ -27,42 +27,7 @@ public function setParam(stdClass $MyClass){
         $this->CellNumber = $MyClass->CellNumber;
     }
   
-}
-// validate that you have filled in all boxes
-public function register( array $MyClass)
-{
-    $errors = [];
-
-    if(trim($MyClass['name'])){
-        $this->name = $MyClass['name'];
-    }
-    else{
-        $errors[] = new ValidatorError('name','name cannot be empty');
-    }
-
-    if(trim($MyClass['email'])){
-        $this->email = $MyClass['email'];
-    }
-    else{
-        $errors[] = new ValidatorError('email','email cannot be empty');
-    }
-
-    if(trim($MyClass['ID'])){
-        $this->ID = $MyClass['ID'];
-    }
-    else{
-        $errors[] = new ValidatorError('ID','ID cannot be empty');
-    }
-
-    if(trim($MyClass['CellNumber'])){
-        $this->CellNumber = $MyClass['CellNumber'];
-    }
-    else{
-        $errors[] = new ValidatorError('CellNumber','placement cannot be empty');
-    }
-    
-    return $errors;
-}}
+}};
 
 
 final class Helper{ 	

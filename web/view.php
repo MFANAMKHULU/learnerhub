@@ -7,7 +7,9 @@
     <h2> Result</h2>
     <?php
 
+    // calling functions and classes
      require_once 'model/model.php';
+     setParam();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $name = $_POST['name'];
         $email = $_POST['email'];
