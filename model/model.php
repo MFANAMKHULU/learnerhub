@@ -1,20 +1,44 @@
 <?php
 
-final class MyClass{
-    // Where we get input and process it
-    // we control how data is represented here
-    public function processinfo($data)
-    {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        #$ID = $_POST['ID'];
-        #$ID = $_POST['CellNumber']
+final class Client{
+    private $name;
+    private $email;
+    private $ID;
+    private $CellNumber;
+    
+    // name
+    function set_name($name)
+    { $this->name = $name;}
+    
+    function get_name() 
+    { return $this->name;}
 
-        $result = $this->processinfo($name,$email);
-    }
+    // email
+    
+    function set_email($email) 
+    { $this->email = $email;}
+    
+    function get_email()
+    { return $this->email;}
+   
+    // id
+    
+    function set_ID($ID)
+     { $this->ID = $ID;}
+    
+    function get_ID() 
+    { return $this->ID;}
+    
 
-};
-
+    // cellnumber
+    function set_CellNumber($CellNumber) 
+    { $this->CellNumber = $CellNumber;}
+    
+    function get_CellNumber()
+    { return $this->CellNumber;}
+    
+    };
+    
 final class Helper{ 	
     // Don't touch anything here
       public static function getUrlParam($name) {
