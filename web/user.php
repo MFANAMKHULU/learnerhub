@@ -14,6 +14,9 @@
     $user->set_email("$user_email");
     $user->set_ID("$user_ID");
     $user->set_CellNumber("$user_CellNumber");
-  
 }
+
+// fetching from class into outputting
+
 ?>
+  
