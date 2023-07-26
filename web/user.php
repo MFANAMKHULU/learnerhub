@@ -1,6 +1,6 @@
 <?php
 // call the class
- $user = new MyClass
+ $user = new MyClass;
 
  if($_SERVER['REQUEST_METHOD'] === 'POST')
 {   // fetching the input from class
@@ -17,6 +17,17 @@
 }
 
 // fetching from class into outputting
+if($_SERVER['REQUEST_METHOD'] === 'POST')
+{ 
+    echo"Name: ".$user->get_name();
+    echo"<br>";
+    echo"email: ".$user->get_email();
+    echo"<br>";
+    echo"Email: ".$user->get_ID();
+    echo"<br>";
+    echo"Cellphone: ".$user->get_CellNumber();
+    echo"<br>";
 
+}
 ?>
   
