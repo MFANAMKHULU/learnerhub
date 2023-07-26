@@ -1,6 +1,6 @@
 <?php
-
-final class myuserinput{
+// model for 
+final class MyClass{
     private $name;
     private $email;
     private $ID;
