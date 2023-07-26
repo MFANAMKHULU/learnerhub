@@ -23,11 +23,11 @@ final class Index{
   const LAYOUT_DIR = '/layout/';
   const PAGE_DIR = '/web/';
   const LAYOUT_PAGE='index.phtml';
-  const DEFAULT_PAGE = 'User.phtml';
+  const DEFAULT_PAGE = 'info';
   
   // where we declare our classes along with their location
   private static $CLASS = [
-    'MyClass' => '/model/model.php', // name of class  and it's location
+    'MyClass' => 'model/model.php', // name of class  and it's location
     'NotFoundException' => 'index.php',
     'Helper' =>'/model/model.php'
     
