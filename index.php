@@ -23,7 +23,7 @@ final class Index{
   const LAYOUT_DIR = '/layout/';
   const PAGE_DIR = '/web/';
   const LAYOUT_PAGE='index.phtml';
-  const DEFAULT_PAGE = 'user';
+  const DEFAULT_PAGE = 'User.phtml';
   
   // where we declare our classes along with their location
   private static $CLASS = [
