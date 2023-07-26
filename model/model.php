@@ -1,6 +1,6 @@
 <?php
 
-final class Client{
+final class myuserinput{
     private $name;
     private $email;
     private $ID;
@@ -38,7 +38,7 @@ final class Client{
     { return $this->CellNumber;}
     
     };
-    
+
 final class Helper{ 	
     // Don't touch anything here
       public static function getUrlParam($name) {
