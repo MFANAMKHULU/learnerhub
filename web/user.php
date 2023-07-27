@@ -29,7 +29,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     echo"<br>";
     echo"Cellphone: ".$user->get_CellNumber();
     echo"<br>";
-    echo"Address: ".$user->get_homeAddress(); 
+    #echo"Address: ".$user->get_homeAddress(); 
 
 }
 
