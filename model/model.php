@@ -5,7 +5,8 @@ final class MyClass{
     private $email;
     private $ID;
     private $CellNumber;
-    
+    private $homeAddress
+        
     // name
     function set_name($name)
     { $this->name = $name;}
@@ -36,6 +37,14 @@ final class MyClass{
     
     function get_CellNumber()
     { return $this->CellNumber;}
+
+    // address
+
+    function set_homeAddress($homeAddress) 
+    { $this->set_homeAddress = $homeAddress;}
+    
+    function get_homeAddress()
+    { return $this->homeAddress;}
     
     };
 

@@ -27,7 +27,7 @@ final class Index{
   
   // where we declare our classes along with their location
   private static $CLASS = [
-    'MyClass' => 'model/model.php', // name of class  and it's location
+    'MyClass' => '/model/model.php', // name of class  and it's location
     'NotFoundException' => 'index.php',
     'Helper' =>'/model/model.php'
     
@@ -52,7 +52,7 @@ final class Index{
   public function loadClass($name){
     if (!array_key_exists($name, self::$CLASS)) { // tell which class, where should find data
         die('Class "' . $name . '" not found.');  // remove die and throw an not found exeption
-      throw new exception("Class doesn't exist".$name);// if class doesn't exist die
+      //throw new exception("Class doesn't exist".$name);// if class doesn't exist die
     }
     require_once __DIR__.self::$CLASS[$name];
   }
