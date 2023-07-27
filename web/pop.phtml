@@ -1,9 +1,14 @@
 <?php
+// Variables to be displayed
+$name = "MFANAMKHULU";
+$message = "CODING IS CHALLENGING YET INTERESTING";
 
- # this is the code that we want to output
-  $pageTitle = "HOMEPAGE";
-  $name = "Welcome MFANAMKHULU";
-  $message = " THIS IS THE INFOMATION THAT'LL BE POSTED HERE";
+// this is the contents under web (different pages)
+$template = '<div>
+    <h2>Hello, ' . $name . '!</h2>
+    <p>Word of the day ' . $message. '.</p>
+</div>';
 
-
+// Output the template
+echo $template;
 ?>
