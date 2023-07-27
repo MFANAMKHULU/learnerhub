@@ -2,13 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $pageTitle; ?></title>
+    <title><?php echo $pageTitle; ?></title>
 </head>
 <body>
-    <h1>Hello, <?= $name; ?>!</h1>
-    <p><?= $message; ?></p>
-    <?php
+     <?php
       require $template;
     ?>
+    <h1>Hello, <?php echo $name; ?>!</h1>
+    <p><?php echo $message; ?></p>
+  
 </body>
 </html>
+

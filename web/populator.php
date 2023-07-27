@@ -1,7 +1,6 @@
 <?php
-$pageTitle = "HomePage";
-$name = "MFANAMKHULU";
-$message = "CODING IS FUN KEEP PUSHING BRO.";
- 
-
+$pageTitle = "HOMEPAGE";
+$headerTitle = "Welcome MFANAMKHULU";
+$content = "<p> THIS IS THE INFOMATION THAT'LL BE POSTED HERE.</p>";
 ?>
+
