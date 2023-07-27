@@ -5,7 +5,7 @@ final class MyClass{
     private $email;
     private $ID;
     private $CellNumber;
-    private $homeAddress
+    private $homeAddress;
         
     // name
     function set_name($name)
