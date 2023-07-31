@@ -38,8 +38,10 @@ nav {
  <h1>Welcome Page</h1> 
  <nav>
   <ul>             
- <!--<li><a href="#">info</a></li> --I know we declared this on index.php  -->
-<!--<li><a href="#">secondinfo</a></li> -->
+  <div class="button">
+                    <a href="<?php echo Helper::createLink('user', ['view' => 'signup']);?>">Signup</a>
+                    <a href="<?php echo Helper::createLink('user', ['view' => 'login']);?>">login</a>
+</div>                
   </ul>
   </nav>              
    </header>
