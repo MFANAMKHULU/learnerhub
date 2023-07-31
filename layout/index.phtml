@@ -1,10 +1,37 @@
-
+<!DOCTYPE html>
 <html>
+
+<style>
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+</style>
 <head>
+  <!--Setting the page to phone scale and zoom at 100% -->  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
  <title> First page</title>
 </head>
  <body>
-
+  
+ <header>
+ <h1>Welcome Page</h1> 
+ <nav>
+  <ul>             
+ <li><a href="#">info</a></li> <!--I know we declared this on index.php  -->
+<!--<li><a href="#">secondinfo</a></li> -->
+  </ul>
+  </nav>              
+   </header>
+   
  <?php
 
  require $template;
