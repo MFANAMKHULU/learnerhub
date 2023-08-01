@@ -20,10 +20,10 @@ $errors = [];
             'password' => isset($_POST['user']['password'])?$_POST['user']['password'] :'',
             'passwordConfirm' => isset($_POST['user']['passwordRepeat'])?$_POST['user']['passwordRepeat'] :''];
 
-            $obj = new User();  
+            $obj = new User();  # passing data to obj
             $errors = $obj->signup($data);
     } 
-    
+ #Assignning if login is successful    
     else if(array_key_exists('login', $_POST))
     {
         $data = ['email' => isset($_POST['user']['email'])?$_POST['user']['email'] :'',
@@ -31,7 +31,9 @@ $errors = [];
 
         $obj = new User();  
         $errors = $obj->login($data);
-
+        
+        
+        # feed back if login is succsesful or not
         if(empty($errors)){
 
             if($obj->getPassword() != $data['password']){
