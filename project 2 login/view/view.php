@@ -35,44 +35,78 @@ final class Helper
     }
 };
 
-final class MyClass{
+final class User{
     private $name;
     private $email;
     private $ID;
-    private $CellNumber;
-    private $homeAddress;
-        
+    #private $CellNumber;
+    private $password;
+
     // name
     function set_name($name)
     { $this->name = $name;}
     
-    function get_name() 
-    { return $this->name;}
-
     // email
-    
     function set_email($email) 
     { $this->email = $email;}
-    
-    function get_email()
-    { return $this->email;}
-   
+
     // id
-    
     function set_ID($ID)
      { $this->ID = $ID;}
     
-    function get_ID() 
-    { return $this->ID;}
-    
-
     // cellnumber
-    function set_CellNumber($CellNumber) 
-    { $this->CellNumber = $CellNumber;}
+    #function set_CellNumber($CellNumber) 
+    #{ $this->CellNumber = $CellNumber;}
     
-    function get_CellNumber()
-    { return $this->CellNumber;}
-
+   // password
+   function set_CellNumber($password) 
+   { $this->password = $password;}
    
-    
-    };
+   // login  function and error validation
+   public function signup( array $user)
+   {
+     $errors = [];
+ 
+     if(trim($user['name'])){
+         $this->name = $user['name'];
+     }
+     else{
+         $errors[] = new ValidatorError('name','name cannot be empty');
+     }
+ 
+     if(trim($user['email'])){
+         $this->email = $user['email'];
+     }
+     else{
+         $errors[] = new ValidatorError('email','email cannot be empty');
+     }
+ 
+     if(trim($user['ID'])){
+         $this->ID = $user['ID'];
+     }
+     else{
+         $errors[] = new ValidatorError('ID','ID cannot be empty');
+     }
+ 
+     if(trim($user['password'])){
+         $this->password = $user['password'];
+     }
+     else{
+         $errors[] = new ValidatorError('password','password cannot be empty');
+     }
+     
+     if(trim($user['password2']))
+     {
+         if($user['password2'] != $this->password){
+             $errors[] = new ValidatorError('Password Match','Password and passwordRepeat must match');
+         }
+     }
+     else
+     {
+         $errors[] = new ValidatorError('passwordRepeat','passwordRepeat cannot be empty');
+     }
+     
+     return $errors;
+   }
+
+}
