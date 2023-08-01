@@ -33,7 +33,7 @@ final class Helper
     {
         return htmlspecialchars($string, ENT_QUOTES);
     }
-};
+}
 
 final class User{
     private $name;
@@ -109,4 +109,34 @@ final class User{
      return $errors;
    }
 
+   public function signin( array $user)
+  {
+    $errors = [];
+
+    if(trim($user['email']))
+    { $this->email = $user['email'];}
+    else
+    { $errors[] = new ValidatorError('email','email cannot be empty');}
+
+    if(trim($user['password']))
+    { $this->password = $user['password'];}
+    else
+    {  $errors[] = new ValidatorError('password','password cannot be empty');}
+
+    return $errors;
+   }
+
+   public function getName()
+   { return $this->name;}
+ 
+   public function getEmail()
+   { return $this->surname;}
+ 
+   public function getID()
+   { return $this->email;}
+ 
+   public function getPassword()
+   { return $this->password;}
 }
+
+?>
