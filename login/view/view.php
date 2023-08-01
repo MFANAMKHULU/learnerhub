@@ -130,10 +130,10 @@ final class User{
    { return $this->name;}
  
    public function getEmail()
-   { return $this->surname;}
+   { return $this->email;}
  
    public function getID()
-   { return $this->email;}
+   { return $this->ID;}
  
    public function getPassword()
    { return $this->password;}

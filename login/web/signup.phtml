@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<form target="_self" method="post">
+<?php
+    if($action ==='signup'):
+?>
+
+<div class="container">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="user[name]" required
+            class="form-control"<?php echo error_field('name', $errors); ?>/>
+    </div>
+
+
+</html>
