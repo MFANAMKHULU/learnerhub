@@ -5,47 +5,26 @@ final class MyClass{
     private $email;
     private $ID;
     private $CellNumber;
-    private $homeAddress;
         
     // name
     function set_name($name)
     { $this->name = $name;}
     
-    function get_name() 
-    { return $this->name;}
-
     // email
     
     function set_email($email) 
     { $this->email = $email;}
-    
-    function get_email()
-    { return $this->email;}
-   
+
     // id
     
     function set_ID($ID)
      { $this->ID = $ID;}
     
-    function get_ID() 
-    { return $this->ID;}
-    
-
     // cellnumber
     function set_CellNumber($CellNumber) 
     { $this->CellNumber = $CellNumber;}
     
-    function get_CellNumber()
-    { return $this->CellNumber;}
 
-    // address
-
-    function set_homeAddress($homeAddress) 
-    { $this->homeAddress = $homeAddress;}
-    
-    function get_homeAddress()
-    { return $this->homeAddress;}
-    
     };
 
 final class Helper{ 	
