@@ -1,6 +1,6 @@
 <?php
   //calling view template 
-  $view = ['signup','login'];
+/*  $view = ['signup','login'];
 
   # choosing based on action chosen
   $action = Helper::getUrlParam('view');
@@ -41,5 +41,5 @@ $errors = [];
             }
             else{ echo 'Welcome User'; }
         }
-    }
+    }*/
     ?>
