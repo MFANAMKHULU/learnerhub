@@ -27,7 +27,7 @@ final class Index{
   
   // where we declare our classes along with their location
   private static $CLASS = [
-    'MyClass' => '/model/model.php', // name of class  and it's location
+    'User' => '/view/view.php', // name of class  and it's location folder then file
     'NotFoundException' => 'index.php',
     'Helper' =>'/model/model.php'
     

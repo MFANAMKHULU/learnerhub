@@ -35,6 +35,7 @@ final class Helper
     }
 }
 
+// declare the class in index.php
 final class User{
     private $name;
     private $email;
