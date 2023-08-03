@@ -37,107 +37,124 @@ final class Helper
 
 // declare the class in index.php
 final class User{
+
+    private $id;
     private $name;
     private $email;
-    private $ID;
-    #private $CellNumber;
     private $password;
 
-    // name
-    function set_name($name)
-    { $this->name = $name;}
-    
-    // email
-    function set_email($email) 
-    { $this->email = $email;}
+    function __construct(){
 
-    // id
-    function set_ID($ID)
-     { $this->ID = $ID;}
-    
-    // cellnumber
-    #function set_CellNumber($CellNumber) 
-    #{ $this->CellNumber = $CellNumber;}
-    
-   // password
-   function set_CellNumber($password) 
-   { $this->password = $password;}
-   
-   // login  function and error validation
-   public function signup( array $user)
-   {
-     $errors = [];
- 
-     if(trim($user['name'])){
-         $this->name = $user['name'];
-     }
-     else{
-         $errors[] = new ValidatorError('name','name cannot be empty');
-     }
- 
-     if(trim($user['email'])){
-         $this->email = $user['email'];
-     }
-     else{
-         $errors[] = new ValidatorError('email','email cannot be empty');
-     }
- 
-     if(trim($user['ID'])){
-         $this->ID = $user['ID'];
-     }
-     else{
-         $errors[] = new ValidatorError('ID','ID cannot be empty');
-     }
- 
-     if(trim($user['password'])){
-         $this->password = $user['password'];
-     }
-     else{
-         $errors[] = new ValidatorError('password','password cannot be empty');
-     }
-     
-     if(trim($user['password2']))
-     {
-         if($user['password2'] != $this->password){
-             $errors[] = new ValidatorError('Password Match','Password and passwordRepeat must match');
-         }
-     }
-     else
-     {
-         $errors[] = new ValidatorError('passwordRepeat','passwordRepeat cannot be empty');
-     }
-     
-     return $errors;
-   }
+    }
 
-   public function signin( array $user)
-  {
-    $errors = [];
+    public function setParam(stdClass $user){
 
-    if(trim($user['email']))
-    { $this->email = $user['email'];}
-    else
-    { $errors[] = new ValidatorError('email','email cannot be empty');}
+        if(array_key_exists('id', $user)){
+            $this->id = $user->id;
+        }
 
-    if(trim($user['password']))
-    { $this->password = $user['password'];}
-    else
-    {  $errors[] = new ValidatorError('password','password cannot be empty');}
+        if(array_key_exists('name', $user)){
+            $this->name = $user->name;
+        }
 
-    return $errors;
-   }
+        if(array_key_exists('email', $user)){
+            $this->email = $user->email;
+        }
 
-   public function getName()
-   { return $this->name;}
- 
-   public function getEmail()
-   { return $this->email;}
- 
-   public function getID()
-   { return $this->ID;}
- 
-   public function getPassword()
-   { return $this->password;}
+        if(array_key_exists('password', $user)){
+            $this->password = $user->password;
+        }
+    }
+
+    public function register( array $user){
+        $errors = [];
+
+        if(trim($user['name'])){
+            $this->name = $user['name'];
+        }
+        else{
+            $errors[] = new ValidatorError('name','name cannot be empty');
+        }
+
+        if(trim($user['email'])){
+            $this->email = $user['email'];
+        }
+        else{
+            $errors[] = new ValidatorError('email','email cannot be empty');
+        }
+
+        if(trim($user['password'])){
+            $this->password = $user['password'];
+        }
+        else{
+            $errors[] = new ValidatorError('password','password cannot be empty');
+        }
+        
+        if(trim($user['password2'])){
+            if($user['password2'] != $this->password){
+                $errors[] = new ValidatorError('Password Match','Password and passwordRepeat must match');
+            }
+        }
+        else{
+            $errors[] = new ValidatorError('passwordRepeat','passwordRepeat cannot be empty');
+        }
+        
+        return $errors;
+    }
+
+    public function login( array $user){
+        $errors = [];
+
+        if(trim($user['email'])){
+            $this->email = $user['email'];
+        }
+        else{
+            $errors[] = new ValidatorError('email','email cannot be empty');
+        }
+
+        if(trim($user['password'])){
+            $this->password = $user['password'];
+        }
+        else{
+            $errors[] = new ValidatorError('password','password cannot be empty');
+        }
+
+        return $errors;
+    }
+
+    public function forgot( array $user){
+        $errors = [];
+        if(trim($user['name'])){
+            $this->name = $user['name'];
+        }
+        else{
+            $errors[] = new ValidatorError('name','name cannot be empty');
+        }
+
+        if(trim($user['email'])){
+            $this->email = $user['email'];
+        }
+        else{
+            $errors[] = new ValidatorError('email','email cannot be empty');
+        }
+
+        return $errors;
+    }
+
+    public function getId(){
+        return $this->id;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
+
+    public function getPassword(){
+        return $this->password;
+    }
 }
-
 ?>

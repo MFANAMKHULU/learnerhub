@@ -1,10 +1,11 @@
 <?php
 // model for 
-final class User{
+/*final class User{
     private $name;
     private $email;
     private $ID;
-    private $CellNumber;
+    private $password;
+
         
     // name
     function set_name($name)
@@ -20,12 +21,12 @@ final class User{
     function set_ID($ID)
      { $this->ID = $ID;}
     
-    // cellnumber
-    function set_CellNumber($CellNumber) 
-    { $this->CellNumber = $CellNumber;}
+    // password
+    function set_CellNumber($password) 
+    { $this->password = $password;}
     
 
-    };
+    };*/
 
 final class Helper{ 	
     // Don't touch anything here

@@ -1,45 +1,15 @@
 <?php
-  //calling view template 
-/*  $view = ['signup','login'];
 
-  # choosing based on action chosen
-  $action = Helper::getUrlParam('view');
+$user = new User;
 
-if(! (array_key_exists('view',$_GET) && in_array($action, $view)))
-{
-    throw  new NotFoundException("View not found");  // checking if view exists and throwing exception
+if($_SERVER['REQUEST_METHOD'] === 'POST')
+{   // fetching the input from class
+   $user_name =$_POST["name"];
+   $user_email =$_POST["email"];
+   $user_ID =$_POST["ID"];
+   $user_CellNumber =$_POST["password"];
+
 }
 
-$errors = [];
-    if(array_key_exists('signup', $_POST))
-    {
-        #calling variables from classes setting and getting
-        $data = ['name' => isset($_POST['user']['name'])?$_POST['user']['name'] :'',
-            'email' => isset($_POST['user']['email'])?$_POST['user']['email'] :'',
-            'ID' => isset($_POST['user']['ID'])?$_POST['user']['ID'] :'',
-            'password' => isset($_POST['user']['password'])?$_POST['user']['password'] :'',
-            'passwordConfirm' => isset($_POST['user']['passwordRepeat'])?$_POST['user']['passwordRepeat'] :''];
 
-            $obj = new User();  # passing data to obj
-            $errors = $obj->signup($data);
-    } 
- #Assignning if login is successful    
-    else if(array_key_exists('login', $_POST))
-    {
-        $data = ['email' => isset($_POST['user']['email'])?$_POST['user']['email'] :'',
-                'password' => isset($_POST['user']['password'])?$_POST['user']['password'] :''];
-
-        $obj = new User();  
-        $errors = $obj->login($data);
-        
-        
-        # feed back if login is succsesful or not
-        if(empty($errors)){
-
-            if($obj->getPassword() != $data['password']){
-                $errors[] = new ValidatorError('Login Failed', 'Check Username or Password And try again');
-            }
-            else{ echo 'Welcome User'; }
-        }
-    }*/
-    ?>
+  ?>
