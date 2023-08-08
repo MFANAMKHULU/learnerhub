@@ -12,18 +12,18 @@ public class BookServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Book> names = getNames(); // Get the list of names
-        request.setAttribute("names", names); // Pass the list to the JSP page
+        List<Book> books = getBooks(); // Get the list of books
+        request.setAttribute("books", books); // Pass the list to the JSP page
 
         // Forward the request to the JSP page
-        request.getRequestDispatcher("/names.jsp").forward(request, response);
+        request.getRequestDispatcher("/books.jsp").forward(request, response);
     }
 
-    private List<names> getNames() {
-        List<Names> names = new ArrayList<>();
-        names.add(new Names("Employee 1", "TeddyLikeABear"));
-        names.add(new Names("Employee 2", "BadGirlBongi"));
-        names.add(new Names("Employee 3", "MFANAMKHULU"));
-        return names;
+    private List<Book> getBooks() {
+        List<Book> books = new ArrayList<>();
+        books.add(new Book("Book 1", "Author 1"));
+        books.add(new Book("Book 2", "Author 2"));
+        books.add(new Book("Book 3", "Author 3"));
+        return books;
     }
 }
