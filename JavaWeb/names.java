@@ -21,9 +21,9 @@ public class BookServlet extends HttpServlet {
 
     private List<names> getNames() {
         List<Names> names = new ArrayList<>();
-        names.add(new names("Employee 1", "TeddyLikeABear"));
-        names.add(new names("Employee 2", "BadGirlBongi"));
-        names.add(new names("Employee 3", "MFANAMKHULU"));
+        names.add(new Names("Employee 1", "TeddyLikeABear"));
+        names.add(new Names("Employee 2", "BadGirlBongi"));
+        names.add(new Names("Employee 3", "MFANAMKHULU"));
         return names;
     }
 }
