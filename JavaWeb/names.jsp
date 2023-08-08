@@ -7,7 +7,7 @@
 
     <ul>
         <c:forEach items="${names}" var="Names">
-            <li>${employee.number} by ${employee.names}</li>
+            <li>${name.number} by ${name.name}</li>
         </c:forEach>
     </ul>
 </body>
