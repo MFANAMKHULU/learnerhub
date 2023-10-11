@@ -1,20 +1,33 @@
 <?php
-session_start();
+// Assuming you have established a database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "organizerdb";
 
-// Check if the form was submitted
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Assuming you have a database connection already established
-    $username = $_POST['name'];
-    $password = $_POST['password'];
-    
-    // Add your code to validate the username and password
-    // and check against the database
-    if ($username == "name" && $password == "password") {
-        $_SESSION['name'] = $username; // Store username in session
+    $entered_username = $_POST['name'];
+    $entered_password = $_POST['password'];
+
+    // Query to retrieve information from the database
+    $sql = "SELECT * FROM organizerdb WHERE name='$entered_username' AND password='$entered_password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Match found in the database
+        echo "Login successful!";
     } else {
-        $error = "Invalid username or password";
+        // No match found in the database
+        echo "Invalid credentials!";
     }
 }
-?>
 
-<!-- Display any error messages, if applicable -->
+$conn->close();
+?>

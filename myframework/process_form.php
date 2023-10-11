@@ -19,18 +19,14 @@ $email = $_POST['email'];
 $cellnumber = $_POST['cellnumber'];
 $password = $_POST['password'];
 
-// Perform data validation here (e.g., checking if fields are not empty)
-// ...
-
+// checking if all info is entered 
 if (empty($name) ||empty($lastname) || empty($email) || empty($password) || empty($cellnumber) ) {
     die("All fields are required.");
 }
-
+   //checking if email format is correct
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die("Invalid email format.");
 }
-
-// Password validation logic goes here...
 
 
 // Insert data into the database
