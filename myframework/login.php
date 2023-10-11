@@ -9,10 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Add your code to validate the username and password
     // and check against the database
-    if ($username == "Katleho" && $password == "12345") {
+    if ($username == "name" && $password == "password") {
         $_SESSION['name'] = $username; // Store username in session
-        header("Location: dashboard.php"); // Redirect to dashboard after successful login
-        exit();
     } else {
         $error = "Invalid username or password";
     }
