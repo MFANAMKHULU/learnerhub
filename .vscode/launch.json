@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ATMsimulator",
+            "request": "launch",
+            "mainClass": "ATMsimulator",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "Calculator",
+            "request": "launch",
+            "mainClass": "Calculator",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "CreateDatabase",
+            "request": "launch",
+            "mainClass": "CreateDatabase",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "DataValidation",
+            "request": "launch",
+            "mainClass": "DataValidation",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "Gendervalidation",
+            "request": "launch",
+            "mainClass": "Gendervalidation",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "GuessTheNumberGame",
+            "request": "launch",
+            "mainClass": "GuessTheNumberGame",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "SimpleCalculator",
+            "request": "launch",
+            "mainClass": "SimpleCalculator",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "dataEntry",
+            "request": "launch",
+            "mainClass": "dataEntry",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "helloworld",
+            "request": "launch",
+            "mainClass": "helloworld",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "palindrone",
+            "request": "launch",
+            "mainClass": "palindrone",
+            "projectName": "learnerhub_7e0683c9"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "simpleJava.src.main.java.com.example.Main",
+            "projectName": "learnerhub_7e0683c9"
+        }
+    ]
+}
