@@ -10,7 +10,7 @@ public class name {
 
     public String getNumber() {
         return number;
-    }
+    }was
 
     public String getName() {
         return name;
