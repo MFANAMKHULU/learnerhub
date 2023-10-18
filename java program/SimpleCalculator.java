@@ -13,11 +13,11 @@ public class SimpleCalculator extends JFrame implements ActionListener {
     JList<String> numberList;
 
     JTextField selectedNumberDisplay; // JTextField
-s
+
     private JButton createStyledButton(String text) {
         JButton button = new JButton(text);
-        button.setFont(new Font("Arial", Font.PLAIN, 16)); //  Setting font
-        button.setForeground(Color.red); // Setting text color
+        button.setFont(new Font("Times New Roman", Font.PLAIN, 18)); // Setting font
+        button.setForeground(Color.blue); // Setting text color
         return button;
     }
 
