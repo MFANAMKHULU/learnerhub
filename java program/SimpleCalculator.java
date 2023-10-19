@@ -115,9 +115,6 @@ public class SimpleCalculator extends JFrame implements ActionListener {
 
         f.setLayout(new FlowLayout());
         f.add(label);
-        f.add(tf);
-        f.add(scrollPane);
-        f.add(p);
         f.add(selectedNumberDisplay); // Add the selectedNumberDisplay
     }
 
@@ -140,7 +137,7 @@ public class SimpleCalculator extends JFrame implements ActionListener {
 
                 listModel.addElement(text); // Add the expression to the list
 
-                switch (operator) {
+                switch (operator) { // for calcuations
                     case "+":
                         result = num1 + num2;
                         break;
