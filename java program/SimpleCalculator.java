@@ -32,6 +32,7 @@ public class SimpleCalculator extends JFrame implements ActionListener {
 
         JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9;
         JButton add, subtract, multiply, divide, equal, clear, decimal;
+        JButton clearList;
 
         // adding styled buttons
         b0 = createStyledButton("0");
@@ -52,8 +53,9 @@ public class SimpleCalculator extends JFrame implements ActionListener {
         equal = createStyledButton("=");
         clear = createStyledButton("C");
         decimal = createStyledButton(".");
+        clearList = createStyledButton("Clear List");
 
-        JPanel p = new JPanel(new GridLayout(4, 4)); // Use GridLayout
+        JPanel p = new JPanel(new GridLayout(5, 4)); // Use GridLayout
 
         selectedNumberDisplay = new JTextField(10);
         selectedNumberDisplay.setEditable(false);
@@ -76,6 +78,7 @@ public class SimpleCalculator extends JFrame implements ActionListener {
         equal.addActionListener(this);
         clear.addActionListener(this);
         decimal.addActionListener(this);
+        clearList.addActionListener(this);
 
         // Add buttons to panel
         p.add(b7);
@@ -95,6 +98,7 @@ public class SimpleCalculator extends JFrame implements ActionListener {
         p.add(equal);
         p.add(add);
         p.add(clear);
+        p.add(clearList);
 
         listModel = new DefaultListModel<>(); // Creating list model
         numberList = new JList<>(listModel); // Creating JList with the list model
@@ -120,7 +124,9 @@ public class SimpleCalculator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
 
-        if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') {
+        if (s.equals("Clear List")) {
+            listModel.removeAllElements();
+        } else if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') {
             tf.setText(tf.getText() + s);
         } else if (s.charAt(0) == 'C') {
             tf.setText("");
