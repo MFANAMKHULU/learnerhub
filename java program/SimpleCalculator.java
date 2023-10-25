@@ -18,6 +18,7 @@ public class SimpleCalculator extends JFrame implements ActionListener {
         JButton button = new JButton(text);
         button.setFont(new Font("Times New Roman", Font.PLAIN, 18)); // Setting font
         button.setForeground(Color.blue); // Setting text color
+        button.setPreferredSize(new Dimension(50, 50)); // for button size
         return button;
     }
 
