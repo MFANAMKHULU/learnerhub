@@ -13,27 +13,32 @@ if ($conn->connect_error) {
 }
 
 // Get form data
-$name = $_POST['name'];
-$lastname = $_POST['lastname'];
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
 $email = $_POST['email'];
-$cellnumber = $_POST['cellnumber'];
-$password = $_POST['password'];
+$phone =$_Post['phone']
+//$role = $_POST['role'];
+
 
 // checking if all info is entered 
 if (empty($name) ||empty($lastname) || empty($email) || empty($password) || empty($cellnumber) ) {
     die("All fields are required.");
 }
+
    //checking if email format is correct
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die("Invalid email format.");
 }
 
-
-// Insert data into the database
-$sql = "INSERT INTO attendee (first_name, last_name, email, phone, password) VALUES ('$name', '$lastname', '$email', '$cellnumber', '$password')";
+if ( 'attendee') {
+    $sql = "INSERT INTO attendees (first_name, last_name, email, phone, password ) VALUES ('$first_name', '$last_name', '$email', '$phone' '$password')";
+} elseif ( 'organizer') {
+    $sql =
+    $sql = "INSERT INTO organizer (organizer_name, organizer_surname, email, phone, password ) VALUES ('$first_name', '$last_name', '$email', '$phone' '$password')";
+}
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "Registration successful!";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
