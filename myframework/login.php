@@ -1,33 +1,27 @@
 <?php
-// Assuming you have established a database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "organizerdb";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $entered_username = $_POST['name'];
-    $entered_password = $_POST['password'];
-
-    // Query to retrieve information from the database
-    $sql = "SELECT * FROM organizerdb WHERE name='$entered_username' AND password='$entered_password'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // Match found in the database
-        echo "Login successful!";
-    } else {
-        // No match found in the database
-        echo "Invalid credentials!";
-    }
-}
-
-$conn->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id = "box">
+        
+       <form method = "post">
+        <div style = "font-size: 20px; margin:10px; color = white;">Login</div>
+       <input id ="text" type = "text" name="user_name" placeholder="Username" required><br><br>
+        <input id ="text" type="password" name="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button><br><br>
+
+            <a href = "https://localhost/learnerhub/myframework/signup"> Click to signup </a><br><br>
+      </form>
+       
+    </div>
+</body>
+<html>
