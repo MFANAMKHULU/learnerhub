@@ -6,7 +6,7 @@ function check_login($con)
     if(isset($_SESSION['user_id'])) // checking if user has logged in       
     {
         $id = $_SESSION['user_id'];
-        $query  = "Select * from users where user_id = '$id' limit 1"; // selecting
+        $query  = "SELECT * FROM users WHERE user_id = '$id' LIMIT 1"; // selecting
         
         $result = mysqli_query($con, $query);
         if($result && mysqli_num_rows($result) > 0) 
@@ -30,11 +30,9 @@ function random_num($length)
        $length = 5;
     }
 
-    $len = rand(4, $length);
-
-    for ($i = 0; $i < $len; $i++)
+    for ($i = 0; $i < $length; $i++)
     {
-        $text = .= rand(0,9);
+        $text .= rand(0,9);
     }
 
     return $text;

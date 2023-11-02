@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <!--for making sure it fits-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <script>
+      function validateForm() {
+            var name = document.forms["registrationForm"]["name"].value;
+            var lastname = document.forms["registrationForm"]["lastname"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var password2 = document.forms["registrationForm"]["password2"].value;
+
+            if (name == "" || lastname == "" || email == "" || password == "" || password2 == "") {
+                alert("All fields must be filled out");
+                return false;
+            
+                if (password != password2) {
+                alert("Passwords do not match");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>    
+  
+    <style>
+        /* Styling */
+        form {
+                                                                            
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFA500;
+    margin: 0;
+    height: 100vh;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="checkbox"] {
+
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+}
+
+.container {
+    max-width: 1900px;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.error {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.success {
+    color: #4caf50;
+    font-size: 14px;
+}
+
+select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover { /*for submit button*/
+            background-color: #45a049;
+        }
+
+        .required::after {   /*for asterik*/
+            content: "*";
+            color: red;
+           margin-left: 5px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 100px;
+        }
+
+        .navbar li {
+            margin: 0;
+        }
+
+        .navbar a {
+            color: rgb(154, 15, 167);
+            text-decoration: none;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        .form-container label,
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .form-container input[type="submit"] {
+            width: auto;
+        }
+
+        .form-container label.required::after {
+            content: "*";
+            color: rgb(96, 127, 184);
+            margin-left: 5px;
+        }
+
+        .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    gap: 50px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <form action="process_form.php" method="post">
+          
+        <div class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="#about">Team</a>
+                        <a href="#mission">Mission</a>
+                    </div>
+
+                </li>
+                <li><a href="#services">Services</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact</a>
+                    <div class="dropdown-content">
+                        <a href="#contact"> Contact Information</a>
+                        <a href="#location">Location</a> 
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="form-container">
+        <label for="name" class="required">Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label for="lastname" class="required">LastName:</label>
+        <input type="text" name="lastname" required><br>
+
+        <label for="email" class="required ">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="cellnumber">Phone:</label>
+        <input type="text" name="cellnumber"><br>
+
+        <label for="password" class="required">Password:</label>
+        <input type="password" name="password" required><br>
+
+        <label for="password2" class="required">Password Confirm:</label>
+        <input type="password" name="password2" required><br>
+        
+        <label for="role">Sign up as:</label>   <!--label for options-->
+        <select id="role" name="role">
+            <option value="attendee">Attendee</option>
+            <option value="organizer">Organizer</option>
+        </select><br>
+
+        <div class="button-container">
+            <input type="submit" value="Submit">
+            <input type="submit" value="Login">
+        </div>
+        
+        
+        <label>
+            <input type="checkbox" name="terms"> I accept the terms and conditions
+        </label><br>
+
+        
+        <!--<a href = "https://localhost/learnerhub/secondinfo"> forgot password </a> -->
+         
+    </form>
+
+        
+
+</body>
+</html>
