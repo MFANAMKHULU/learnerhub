@@ -14,3 +14,6 @@ echo "<button onclick='clockOut()'>Clock Out</button>";
 
 // Add JavaScript to handle clock-in/out actions
 echo "<script src='js/script.js'></script>";
+
+
+//code
