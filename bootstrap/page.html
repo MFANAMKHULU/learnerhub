@@ -5,9 +5,56 @@
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <title>Bootstrap Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <H1> Enter your information </H1>
+
+     <style>
+
+        body {
+            background-color: #004d98; 
+            color: #ffffff; 
+        }
+
+        .container {
+            background-color: #a50044;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+         input {
+            background-color: #ffffff;
+            border: 1px solid #004d98; 
+            color: #000000; 
+        }
+
+        label {
+            color: #ffffff;
+        }
+
+        .btn-primary {
+            background-color: #004d98; 
+            color: #ffffff; 
+        }
+
+        .btn-secondary {
+            background-color: #a50044; 
+            color: #ffffff; 
+        }
+        
+        
+        h1 {
+            color: #a50044;
+            text-align: center;
+        }
+     </style>
 </head>
 <body>
-    <div class="container"> <!--container class to create a responsive container-->
+
+    <div class="container" > <!--container class to create a responsive container-->
         <div class="form-group"><!--form-group class for form styling-->
             <label for="name" class="required">Name:</label> <!-- input fields for consistent styling.-->
             <input type="text" class="form-control" name="name" required>
@@ -27,7 +74,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Identification">Identification:</label>
+            <label for="Identification" class="required">Identification:</label>
             <select class="form-control" id="identity" name="identity"> <!--dropdown-->
                 <option>South African ID</option> <!--available options-->
                 <option>Passport</option>
@@ -59,10 +106,8 @@
     </div>
 </div>
 
-    
         <br>
         
-
         <div class="form-group">
             <label for="password" class="required">Password:</label>
             <input type="password" class="form-control" name="password" required>
@@ -79,8 +124,8 @@
 
 
     <!-- Bootstrap JS and Popper.js (required for some Bootstrap components) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script><!--reference to the jQuery library hosted on the content delivery network (CDN) provided by jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
