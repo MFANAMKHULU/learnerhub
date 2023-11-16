@@ -7,9 +7,43 @@
   <title>Bookstore - Catalog</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Custom Styles -->
+  <style>
+    body {
+      background-color: #f9f9f9; /* Light gray background */
+    }
+  
+    .navbar-dark {
+      background-color: #004D98 !important; /* Barcelona's teal/navy blue */
+    }
+  
+    .navbar-dark .navbar-brand,
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff !important; /* White text */
+    }
+  
+    .navbar-dark .navbar-toggler-icon {
+      background-color: #fff; /* White toggler icon */
+    }
+  
+    h1, h2 {
+      color: #004D98; /* Barcelona's teal/navy blue header text */
+    }
+  
+    .list-group-item a {
+      color: #004D98 !important; /* Barcelona's teal/navy blue category links */
+    }
+  
+    footer {
+      background-color: #004D98; /* Barcelona's teal/navy blue footer background */
+      color: #fff; /* White footer text */
+    }
+  </style>
+  
 </head>
 
-<body>
+
+<body class="d-flex flex-column min-vh-100">
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -39,7 +73,7 @@
   </nav>
 
   <!-- Catalog Page -->
-  <div class="container mt-5">
+  <div class="container mt-5 flex-grow-1">
     <h1>Book Catalog</h1>
 
     <div class="row">
@@ -57,18 +91,21 @@
     </ul>
   </div>
 
-  <footer class="bg-dark text-white mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>&copy; 2023 Your Bookstore</p>
-        </div>
-        <div class="col-md-6 text-right">
-          <a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Terms of Service</a>
-        </div>
+  
+  <!-- Footer -->
+<footer class="bg-dark text-white fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>&copy; 2023 Your Bookstore</p>
+      </div>
+      <div class="col-md-6 text-right">
+        <a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Terms of Service</a>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
+
 
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
