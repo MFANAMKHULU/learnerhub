@@ -1,5 +1,5 @@
 <?php
-/*
+
 function checkEmailExists($email, $table) {
     $host = "localhost";
     $username = "root";
@@ -33,6 +33,25 @@ function containsSpecialCharacters($str) {
     return !preg_match($pattern, $str);
 }
 
+// validating password
+function validatePassword($password) {
+    // Check if password contains at least one capital letter
+    if (!preg_match('/[A-Z]/', $password)) {
+        return "Password must contain at least one capital letter.";
+    }
+
+    // Check if password contains at least one special character
+    if (!preg_match('/[^a-zA-Z\d]/', $password)) {
+        return "Password must contain at least one special character.";
+    }
+
+    // Check if password contains at least one number
+    if (!preg_match('/\d/', $password)) {
+        return "Password must contain at least one number.";
+    }
+
+    return true; // Password is valid
+}
 
 // Main Logic
 
@@ -83,6 +102,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password must meet the following criteria: at least one uppercase letter, one lowercase letter, one special character, and a minimum length of 8 characters";
     }
 
+    // Checking if passwords match
+$password = $_POST['password'];
+$password2 = $_POST['password2'];
+
+if ($password !== $password2) {
+    die("Passwords do not match.");
+}
+
+
    // Check if the email is unique in the database
 $emailExists = checkEmailExists($email);
 $emailExistsInEmployee = checkEmailExists($email, "employee");
@@ -102,5 +130,5 @@ if ($emailExists) {
 
 }
 
-*/
+
 ?>
