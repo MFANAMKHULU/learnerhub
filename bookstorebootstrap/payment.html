@@ -1,0 +1,40 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - I'M DAVID</title>
+    <!-- Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="text-center">
+
+    <h1>Payment for I'M DAVID</h1>
+    
+    <div class="container">
+        <p>Thank you for choosing to buy I'M DAVID. Please proceed with the payment:</p>
+        
+        <!-- Payment form -->
+        <form action="process_payment.php" method="post">
+            <!-- Include necessary form fields (e.g., card number, expiration date, CVV) -->
+            <!-- Note: Ensure proper security practices when handling payment data -->
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" required>
+            
+            <label for="expiryDate">Expiration Date:</label>
+            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            
+            <button type="submit" class="btn btn-success">Pay Now</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js links (required for some Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
