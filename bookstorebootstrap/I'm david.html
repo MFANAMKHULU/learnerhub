@@ -14,6 +14,9 @@
 
         h1 {
             color: #007bff; 
+        }
+
+  
 
         .container {
             background-color: #ffffff; 
@@ -21,6 +24,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
             margin-top: 20px;
+            margin: 20px auto;
         }
 
         img {
@@ -47,6 +51,13 @@
         li {
             margin-bottom: 5px;
         }
+
+        /* Style for the rating section */
+        .rating-section,
+        .reviews-section,
+        .comments-section {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body class="text-center">
@@ -54,17 +65,54 @@
     <h1>I'M DAVID</h1>
     <img src="I'm david.jpg" alt="Book Cover" class="mx-auto d-block">
 
-
     <div class="container text-left">
         <p>12-year-old David has lived in a concentration camp for as long as he can remember. ... (book summary continues)</p>
         <p>Author: Anne Holm</p>
-        <p>Rating: ★★★</p>
-        <p>Reviews:</p>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <p>Rating: ★★★</p>
+            <!-- Rating Form -->
+            <form action="process_rating.php" method="post">
+                <p>Rate this book:</p>
+                <label><input type="radio" name="rating" value="1"> ★</label>
+                <label><input type="radio" name="rating" value="2"> ★★</label>
+                <label><input type="radio" name="rating" value="3"> ★★★</label>
+                <label><input type="radio" name="rating" value="4"> ★★★★</label>
+                <label><input type="radio" name="rating" value="5"> ★★★★★</label>
+                <button type="submit" class="btn btn-primary">Submit Rating</button>
+            </form>
+        </div>
+
         
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <p>Leave a Comment:</p>
+            <form action="process_review.php" method="post">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment">Your Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" cols="50" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Comment</button>
+            </form>
+        </div>
+
         <p>Purchase Options:</p>
         <ul>
             <li><a href="payment.html" class="btn btn-primary">Buy on our website</a></li>
         </ul>
+
         <p style="margin-top: 10px;">Related Books:</p>
         <ul>
             <li><a href="mamello.html">Mamello</a></li>
